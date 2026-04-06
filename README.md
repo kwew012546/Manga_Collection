@@ -25,10 +25,12 @@
 
 1. **Clone the repository**
    ```bash
-   git clone [https://github.com/kwew012546/Manga_Collection.git](https://github.com/kwew012546/Manga_Collection.git)
+   git clone [https://github.com/kwew012546/Manga_Collection.git](https:/om/kwew012546/github.c/Manga_Collection.git)
 
 2. **Install dependencies**
+   ```bash
    flutter pub get
 
 3. **Run app**
+   ```bash
    flutter run
