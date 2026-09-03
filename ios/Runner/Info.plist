@@ -45,5 +45,9 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>ขอสิทธิ์เข้าถึงคลังรูปภาพเพื่อเลือกรูปภาพปกมังงะ</string>
+	<key>NSCameraUsageDescription</key>
+	<string>ขอสิทธิ์เข้าถึงกล้องถ่ายภาพเพื่อถ่ายภาพปกมังงะ</string>
 </dict>
 </plist>
