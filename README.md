@@ -10,7 +10,7 @@
 **แอปพลิเคชันจัดการและติดตามการสะสมมังงะส่วนตัว (Personal Manga Collection Tracker)**  
 ช่วยให้นักสะสมบันทึก เช็กเล่มที่ขาด ค้นหา และดูสถิติความสมบูรณ์ของคลังมังงะได้อย่างสะดวก รวดเร็ว และสวยงาม
 
-[ฟีเจอร์เด่น](#-ฟีเจอร์หลัก-key-features) • [โครงสร้างโปรเจกต์](#-โครงสร้างโปรเจกต์-architecture) • [การติดตั้งและรัน](#-การติดตั้งและเริ่มต้นใช้งาน-getting-started) • [การทดสอบ](#-การทดสอบระบบ-testing)
+[ฟีเจอร์เด่น](#-ฟีเจอร์หลัก-key-features) • [โครงสร้างโปรเจกต์](#-โครงสร้างโปรเจกต์-architecture) • [การติดตั้งและรัน](#-การติดตั้งและเริ่มต้นใช้งาน-getting-started) • [การสร้างไฟล์ติดตั้ง](#-การสร้างไฟล์สำหรับติดตั้งบนอุปกรณ์-building--installing) • [การทดสอบ](#-การทดสอบระบบ-testing)
 
 </div>
 
@@ -95,26 +95,64 @@ cd Manga_Collection
 flutter pub get
 ```
 
-### 3. รันแอปพลิเคชัน
+### 3. ตรวจสอบอุปกรณ์ที่เชื่อมต่อ (Check Connected Devices)
 ```bash
-# รันบนอุปกรณ์ที่เชื่อมต่อ (เช่น Windows, Android, iOS)
-flutter run
+flutter devices
 ```
+
+### 4. คำสั่งสำหรับรันแอปพลิเคชัน (Running the App)
+
+* 🤖 **สำหรับระบบ Android (โทรศัพท์มือถือ หรือ Android Emulator):**
+  ```bash
+  # รันบนอุปกรณ์ Android ที่เชื่อมต่อ
+  flutter run -d android
+  ```
+
+* 🍎 **สำหรับระบบ iOS (iPhone จริง หรือ iOS Simulator บน macOS):**
+  ```bash
+  # รันบนอุปกรณ์ iOS ที่เชื่อมต่อ หรือ Simulator
+  flutter run -d ios
+  ```
+
+* 💻 **สำหรับ Windows Desktop:**
+  ```bash
+  flutter run -d windows
+  ```
+
+* 🌐 **สำหรับ Web Browser:**
+  ```bash
+  flutter run -d chrome
+  ```
 
 ---
 
-## 📦 การสร้างไฟล์สำหรับติดตั้ง (Building)
+## 📦 การสร้างไฟล์สำหรับติดตั้งบนอุปกรณ์ (Building & Installing)
 
-### 🤖 Android (APK):
-```bash
-flutter build apk --release
-```
-*ไฟล์ติดตั้งจะอยู่ที่:* `build/app/outputs/flutter-apk/app-release.apk`
+### 🤖 1. สำหรับ Android (สร้างไฟล์ APK ไปติดตั้งบนมือถือได้ถาวร)
 
-### 🍎 iOS:
-```bash
-flutter build ipa --release
-```
+1. **คอมไพล์เป็นไฟล์ APK:**
+   ```bash
+   flutter build apk --release
+   ```
+2. **ตำแหน่งไฟล์ติดตั้ง:**
+   `build/app/outputs/flutter-apk/app-release.apk`
+3. **การติดตั้ง:**
+   ส่งไฟล์ `app-release.apk` ไปยังโทรศัพท์ Android (ผ่าน LINE, Google Drive หรือสาย USB) แล้วกดติดตั้งได้ทันที ไม่จำเป็นต้องต่อสายกับคอมพิวเตอร์อีก
+
+---
+
+### 🍎 2. สำหรับ iOS (สร้างไฟล์สำหรับ iPhone / iPad)
+
+1. **เปิดโปรเจกต์ใน Xcode (บน macOS):**
+   ```bash
+   open ios/Runner.xcworkspace
+   ```
+2. **ตั้งค่า Code Signing:**
+   ไปที่แถบ **Signing & Capabilities** ใน Xcode แล้วเลือก **Development Team** ของคุณ
+3. **คอมไพล์เป็นไฟล์ IPA หรือติดตั้งผ่าน Xcode:**
+   ```bash
+   flutter build ipa --release
+   ```
 
 ---
 
