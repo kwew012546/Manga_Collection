@@ -182,17 +182,6 @@ class ComicController extends GetxController {
     recentlyOpened.refresh();
   }
 
-  void addMultipleVolumes(Comic comic, int countToAdd) {
-    if (countToAdd <= 0) return;
-    int currentLength = comic.volumes.length;
-    for (int i = 1; i <= countToAdd; i++) {
-      comic.volumes.add(Volume(number: currentLength + i, isOwned: true));
-    }
-    _saveToDisk();
-    comicList.refresh();
-    recentlyOpened.refresh();
-  }
-
   void updateComicDetails(Comic comic, String title, String note) {
     comic.title = title;
     comic.note = note;
