@@ -108,9 +108,9 @@ class DetailScreen extends StatelessWidget {
                 margin: EdgeInsets.only(top: 12),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  color: isReducing ? Colors.red.withOpacity(0.15) : Colors.green.withOpacity(0.15),
+                  color: isReducing ? Colors.red.withValues(alpha: 0.15) : Colors.green.withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(8),
-                  border: Border.all(color: isReducing ? Colors.red.withOpacity(0.4) : Colors.green.withOpacity(0.4)),
+                  border: Border.all(color: isReducing ? Colors.red.withValues(alpha: 0.4) : Colors.green.withValues(alpha: 0.4)),
                 ),
                 child: Text(
                   warningText.value,

@@ -166,9 +166,9 @@ class HomeScreen extends StatelessWidget {
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 8, vertical: 3),
                 decoration: BoxDecoration(
-                  color: Colors.red.withOpacity(0.2),
+                  color: Colors.red.withValues(alpha: 0.2),
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: Colors.red.withOpacity(0.4)),
+                  border: Border.all(color: Colors.red.withValues(alpha: 0.4)),
                 ),
                 child: Text(
                   "${pct.toStringAsFixed(1)}%",
